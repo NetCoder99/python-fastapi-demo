@@ -8,8 +8,8 @@
       "name": "Python: Current File",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/app/main.py",
-      "console": "integratedTerminal",
+      "module": "uvicorn",
+      "args": ["app.main:app","--reload"],     
       "justMyCode": true
     }
   ]

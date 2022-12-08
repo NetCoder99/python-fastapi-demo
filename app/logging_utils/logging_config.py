@@ -1,4 +1,6 @@
 import sys
+
+from app.logging_utils.logging_cache import LogCache
 sys.path.append("./")
 import logging
 
@@ -8,6 +10,10 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)-9s - %(mess
 
 def config():
   logger = logging.getLogger("app_logger")
+
+  cache_handler = LogCache()
+  logger.addHandler(cache_handler)
+
 
   consoleHandler = logging.StreamHandler()
   consoleHandler.setFormatter(formatter)
